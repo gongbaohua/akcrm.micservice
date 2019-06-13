@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.avatech.edi.akcrm.mapper.ItemsMapper">
+
+         <resultMap id="ItemsMap" type="com.avatech.edi.akcrm.model.bo.items.Items">
+                    <result column="ItemCode" property="itemCode" jdbcType="VARCHAR"/>
+                    <result column="ItemName" property="itemName" jdbcType="VARCHAR"/>
+                    <result column="Price" property="price" jdbcType="DECIMAL"/>
+                    <result column="validFor" property="validFor" jdbcType="VARCHAR"/>
+                    <result column="QryGroup1" property="qryGroup1" jdbcType="VARCHAR"/>
+                    <result column="QryGroup2" property="qryGroup2" jdbcType="VARCHAR"/>
+                    <result column="QryGroup3" property="qryGroup3" jdbcType="VARCHAR"/>
+                    <result column="QryGroup4" property="qryGroup4" jdbcType="VARCHAR"/>
+                    <result column="QryGroup5" property="qryGroup5" jdbcType="VARCHAR"/>
+                    <result column="QryGroup6" property="qryGroup6" jdbcType="VARCHAR"/>
+                    <result column="ItmsGrpCod" property="itmsGrpCod" jdbcType="VARCHAR"/>
+                    <result column="ItemType" property="itemType" jdbcType="VARCHAR"/>
+                    <result column="U_Field1" property="u_Field1" jdbcType="VARCHAR"/>
+                    <result column="U_Field2" property="u_Field2" jdbcType="VARCHAR"/>
+                    <result column="U_Field3" property="u_Field3" jdbcType="VARCHAR"/>
+                    <result column="U_Field4" property="u_Field4" jdbcType="VARCHAR"/>
+                    <result column="U_profamily" property="u_profamily" jdbcType="VARCHAR"/>
+                    <result column="U_Proline" property="u_Proline" jdbcType="VARCHAR"/>
+                    <result column="U_Field5" property="u_Field5" jdbcType="VARCHAR"/>
+                    <result column="U_Field6" property="u_Field6" jdbcType="VARCHAR"/>
+                    <result column="U_Field7" property="u_Field7" jdbcType="VARCHAR"/>
+                    <result column="U_Field8" property="u_Field8" jdbcType="VARCHAR"/>
+                    <result column="U_Field9" property="u_Field9" jdbcType="VARCHAR"/>
+         </resultMap>
+
+
+         <insert id="insertItems" parameterType="com.avatech.edi.akcrm.model.bo.items.Items">
+             INSERT INTO "OITM" (
+                     "ItemCode",
+                     "ItemName",
+                     "Price",
+                     "validFor",
+                     "QryGroup1",
+                     "QryGroup2",
+                     "QryGroup3",
+                     "QryGroup4",
+                     "QryGroup5",
+                     "QryGroup6",
+                     "ItmsGrpCod",
+                     "ItemType",
+                     "U_Field1",
+                     "U_Field2",
+                     "U_Field3",
+                     "U_Field4",
+                     "U_profamily",
+                     "U_Proline",
+                     "U_Field5",
+                     "U_Field6",
+                     "U_Field7",
+                     "U_Field8",
+                     "U_Field9"
+              )
+             values(
+                      #{itemCode},
+                      #{itemName},
+                      #{price},
+                      #{validFor},
+                      #{qryGroup1},
+                      #{qryGroup2},
+                      #{qryGroup3},
+                      #{qryGroup4},
+                      #{qryGroup5},
+                      #{qryGroup6},
+                      #{itmsGrpCod},
+                      #{itemType},
+                      #{u_Field1},
+                      #{u_Field2},
+                      #{u_Field3},
+                      #{u_Field4},
+                      #{u_profamily},
+                      #{u_Proline},
+                      #{u_Field5},
+                      #{u_Field6},
+                      #{u_Field7},
+                      #{u_Field8},
+                      #{u_Field9}
+             )
+         </insert>
+
+         <select id="searchItems" resultMap="ItemsMap">
+             SELECT  top 10
+                     T0."ItemCode",
+                     T0."ItemName"
+                     ,T0."validFor",
+                     T0."QryGroup1",
+                     T0."QryGroup2",
+                     T0."QryGroup3",
+                     T0."QryGroup4",
+                     T0."QryGroup5",
+                     T0."QryGroup6",
+                     T0."ItmsGrpCod",
+                     T0."ItemType",
+                     T0."U_Field3",
+                     T0."U_profamily",
+                     T0."U_Proline",
+                     T0."U_Field5",
+                     T0."U_Field6",
+                     T0."U_Field7",
+                     T0."U_Field8",
+                     T0."U_Field9"
+             from "OITM" T0
+         </select>
+
+</mapper>
