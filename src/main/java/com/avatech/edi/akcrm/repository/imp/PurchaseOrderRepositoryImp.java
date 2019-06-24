@@ -5,7 +5,7 @@
  */
 package com.avatech.edi.akcrm.repository.imp;
 
-import com.avatech.edi.akcrm.model.bo.purchaseorder.PurchaseOrder;
+import com.avatech.edi.akcrm.model.bo.purchaseorder.BusinessPartner;
 import com.avatech.edi.akcrm.model.bo.purchaseorder.BPAddresses;
 import com.avatech.edi.akcrm.mapper.PurchaseOrderMapper;
 import com.avatech.edi.akcrm.repository.PurchaseOrderRepository;
@@ -20,13 +20,13 @@ public class PurchaseOrderRepositoryImp implements PurchaseOrderRepository{
     private PurchaseOrderMapper purchaseOrderMapper;
 
 
-    public void savePurchaseOrder(PurchaseOrder purchaseOrder){
+    public void savePurchaseOrder(BusinessPartner purchaseOrder){
         purchaseOrderMapper.insertPurchaseOrder(purchaseOrder);
 
     }
 
-    public List<PurchaseOrder> fetchPurchaseOrders(){
-        List<PurchaseOrder> purchaseOrders = new ArrayList();
+    public List<BusinessPartner> fetchPurchaseOrders(){
+        List<BusinessPartner> purchaseOrders = new ArrayList();
         purchaseOrders = purchaseOrderMapper.searchPurchaseOrder();
         return purchaseOrders;
     }
@@ -42,7 +42,7 @@ public class PurchaseOrderRepositoryImp implements PurchaseOrderRepository{
         return bPAddressess;
     }
 
-    public PurchaseOrder getRequestTemplate(){
+    public BusinessPartner getRequestTemplate(){
 
         return purchaseOrderMapper.searchRequestTemplate();
     }

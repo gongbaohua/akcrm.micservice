@@ -5,20 +5,20 @@
  */
 package com.avatech.edi.akcrm.repository;
 
-import com.avatech.edi.akcrm.model.bo.purchaseorder.PurchaseOrder;
+import com.avatech.edi.akcrm.model.bo.purchaseorder.BusinessPartner;
 import com.avatech.edi.akcrm.model.bo.purchaseorder.BPAddresses;
-import org.springframework.stereotype.Component;
+
 import java.util.List;
 
 public interface PurchaseOrderRepository{
 
-    void savePurchaseOrder(PurchaseOrder PurchaseOrder);
+    void savePurchaseOrder(BusinessPartner PurchaseOrder);
 
-    List<PurchaseOrder> fetchPurchaseOrders();
+    List<BusinessPartner> fetchPurchaseOrders();
 
     void saveBPAddresses(BPAddresses BPAddresses);
 
     List<BPAddresses> fetchBPAddressess(String CardCode);
 
-    PurchaseOrder getRequestTemplate();
+    BusinessPartner getRequestTemplate();
 }

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.avatech.edi.akcrm.mapper.DeliveryOrderMapper">
+
+    <resultMap id="StockDeliveryOrderMap" type="com.avatech.edi.akcrm.model.bo.deliveryorder.StockDeliveryOrder">
+        <result column="CardCode" property="cardCode" jdbcType="VARCHAR"/>
+        <result column="DocNum" property="docNum" jdbcType="VARCHAR"/>
+        <result column="GreateDate" property="greateDate" jdbcType="VARCHAR"/>
+        <result column="Comments" property="comments" jdbcType="VARCHAR"/>
+        <result column="Type" property="type" jdbcType="VARCHAR"/>
+        <result column="DocStatus" property="docStatus" jdbcType="VARCHAR"/>
+    </resultMap>
+    <resultMap id="StockDeliveryItemMap" type="com.avatech.edi.akcrm.model.bo.deliveryorder.StockDeliveryItem">
+        <result column="CRMDocEntry" property="crmdocEntry" jdbcType="VARCHAR"/>
+        <result column="Name" property="name" jdbcType="VARCHAR"/>
+        <result column="DocNum" property="docNum" jdbcType="VARCHAR"/>
+        <result column="Type" property="lineStatus" jdbcType="VARCHAR"/>
+        <result column="Quantity" property="quantity" jdbcType="DECIMAL"/>
+        <result column="DiscPrcnt" property="discPrcnt" jdbcType="DECIMAL"/>
+        <result column="LineTotal" property="lineTotal" jdbcType="DECIMAL"/>
+        <result column="ItemCode" property="itemCode" jdbcType="VARCHAR"/>
+        <result column="Price" property="docNum" jdbcType="VARCHAR"/>
+        <result column="WhsCode" property="whsCode" jdbcType="VARCHAR"/>
+    </resultMap>
+
+
+    <insert id="insertStockDeliveryOrder" parameterType="com.avatech.edi.ak2.model.bo.ak.StockDeliveryOrder">
+             INSERT INTO "AVA_WM_OIEG" (
+                     "CardCode",
+                     "DocNum",
+                     "GreateDate",
+                     "Comments",
+                     "Type",
+                     "DocStatus"
+              )
+             values(
+                      #{cardCode},
+                      #{docNum},
+                      #{greateDate},
+                      #{comments},
+                      #{type},
+                      #{docStatus}
+             )
+         </insert>
+
+    <select id="searchStockDeliveryOrder" resultMap="StockDeliveryOrderMap">
+             SELECT
+                     T0."CardCode",
+                     T0."DocNum",
+                     T0."GreateDate",
+                     T0."Comments",
+                     T0."Type",
+                     T0."DocStatus"
+             from "AVA_WM_OIEG" T0
+         </select>
+
+    <insert id="insertStockDeliveryItem" parameterType="com.avatech.edi.ak2.model.bo.ak.StockDeliveryItem">
+             INSERT INTO "AVA_WM_IGE1" (
+                     "CRMDocEntry",
+                     "Name",
+                     "DocNum",
+                     "Type",
+                     "Quantity",
+                     "DiscPrcnt",
+                     "LineTotal",
+                     "ItemCode",
+                     "Price",
+                     "WhsCode"
+              )
+             values(
+                      #{crmdocEntry},
+                      #{name},
+                      #{docNum},
+                      #{lineStatus},
+                      #{quantity},
+                      #{discPrcnt},
+                      #{lineTotal},
+                      #{itemCode},
+                      #{docNum},
+                      #{whsCode}
+             )
+         </insert>
+
+    <select id="searchStockDeliveryItem" resultMap="StockDeliveryItemMap">
+             SELECT
+                     T0."CRMDocEntry",
+                     T0."Name",
+                     T0."DocNum",
+                     T0."Type",
+                     T0."Quantity",
+                     T0."DiscPrcnt",
+                     T0."LineTotal",
+                     T0."ItemCode",
+                     T0."Price",
+                     T0."WhsCode"
+             from "AVA_WM_IGE1" T0
+         </select>
+
+</mapper>

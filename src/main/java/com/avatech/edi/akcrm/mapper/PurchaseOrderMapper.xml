@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.avatech.edi.akcrm.mapper.PurchaseOrderMapper">
 
-    <resultMap id="PurchaseOrderMap" type="com.avatech.edi.akcrm.model.bo.purchaseorder.PurchaseOrder">
+    <resultMap id="PurchaseOrderMap" type="com.avatech.edi.akcrm.model.bo.purchaseorder.BusinessPartner">
         <result column="CardCode" property="cardCode" jdbcType="VARCHAR"/>
         <result column="CardType" property="cardType" jdbcType="VARCHAR"/>
         <result column="CardName" property="cardName" jdbcType="VARCHAR"/>
@@ -36,7 +36,7 @@
     </resultMap>
 
 
-    <insert id="insertPurchaseOrder" parameterType="com.avatech.edi.akcrm.model.bo.purchaseorder.PurchaseOrder">
+    <insert id="insertPurchaseOrder" parameterType="com.avatech.edi.akcrm.model.bo.purchaseorder.BusinessPartner">
              INSERT INTO "OCRD" (
                      "CardCode",
                      "CardType",

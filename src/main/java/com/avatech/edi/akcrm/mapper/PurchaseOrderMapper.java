@@ -6,7 +6,7 @@
 package com.avatech.edi.akcrm.mapper;
 
 
-import com.avatech.edi.akcrm.model.bo.purchaseorder.PurchaseOrder;
+import com.avatech.edi.akcrm.model.bo.purchaseorder.BusinessPartner;
 import com.avatech.edi.akcrm.model.bo.purchaseorder.BPAddresses;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
@@ -15,13 +15,13 @@ import java.util.List;
 @Component
 public interface PurchaseOrderMapper{
 
-    void insertPurchaseOrder(PurchaseOrder PurchaseOrder);
+    void insertPurchaseOrder(BusinessPartner PurchaseOrder);
 
-    List<PurchaseOrder> searchPurchaseOrder();
+    List<BusinessPartner> searchPurchaseOrder();
 
     void insertBPAddresses(BPAddresses BPAddresses);
 
     List<BPAddresses> searchBPAddresses(@Param("CardCode")String CardCode);
 
-    PurchaseOrder searchRequestTemplate();
+    BusinessPartner searchRequestTemplate();
 }
